@@ -63,13 +63,13 @@ function b() {
 b();
 console.log(a);
 
- "use strict";
-    function b() {
-     a = 10;
-     return;
-     function a() {}
-    }
+    "use strict";
     let a = 1;
+    function b() {
+      a = 10;
+      return;
+      function a() {}
+    }
     b();
     console.log(a);
 
