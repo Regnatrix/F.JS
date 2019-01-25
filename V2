@@ -1,0 +1,114 @@
+Verkefni 2 - Objects (5%)
+1. Búðu til object með upplýsingar um þig; nafn, kennitala, heimilsfang, heimasími og gsm.
+
+let Notandi = {
+   nafn: "Sandra",
+   kennitala: "110592-2489",
+   heimilisfang: "gotuheiti 123",
+   heimaS: "555-5555",
+   gsm: "888-8888"
+}
+-------------------------------------------------------------------------------
+2. Notaðu for…in lykkjuna til að birta öll eigindin (e. property) ásamt gildum í objectinu í lið 1.
+Object.keys(Notandi).forEach(function(key) {
+    console.log(key, Notandi[key]);
+	});
+	
+-------------------------------------------------------------------------------
+3. Bættu við aðferð í objectið sem þú gerðir í lið 1. Aðferðin á að skila streng sem inniheldur
+nafn og aldur.
+
+Notandi.aldur = 26;
+	Notandi.nafnAldur = function () {
+		return "nafn: " + this.nafn + " \naldur: " + this.aldur;
+	};
+	Notandi.nafnAldur();
+	
+-------------------------------------------------------------------------------
+4. Prentaðu út með console.log() Nonni.
+let family = {
+"parents":
+{
+"fathers": [{"name":"Jakob"},{"name":"Nonni"}],
+"mothers":[{"name":"Rakel"},{"name":"Sara"}]
+}
+ };
+
+ console.log(family.parents.fathers[1].name);
+ 
+-------------------------------------------------------------------------------
+
+5. Leystu lið 8 í lesson 7 - Objects á Udacity
+
+var breakfast = {
+  name: "The Lumberjack",
+  price: "$9.95",
+  ingredients: ["eggs", "sausage", "toast", "hashbrowns", "pancakes"]
+};
+
+console.log(breakfast.name, breakfast.price);
+
+-------------------------------------------------------------------------------
+6. Leystu lið 9 í lesson 7 - Objects á Udacity
+
+var savingsAccount = {
+    balance: 1000,
+    interestRatePercent: 1,
+    deposit: function addMoney(amount) {
+        if (amount > 0) {
+            savingsAccount.balance += amount;
+        }
+    },
+    withdraw: function removeMoney(amount) {
+        var verifyBalance = savingsAccount.balance - amount;
+        if (amount > 0 && verifyBalance >= 0) {
+            savingsAccount.balance -= amount;
+        }
+    },
+    printAccountSummary: function SummaryAccountPrinting() {
+        return "Welcome!\nYour balance is currently $1000 and your interest rate is 1%.";
+    }
+};
+
+console.log(savingsAccount.printAccountSummary());
+
+-------------------------------------------------------------------------------
+7. Leystu lið 12 í lesson 7 - Objects á Udacity
+
+var donuts = [
+    { type: "Jelly", cost: 1.22 },
+    { type: "Chocolate", cost: 2.45 },
+    { type: "Cider", cost: 1.59 },
+    { type: "Boston Cream", cost: 5.99 }
+];
+
+donuts.forEach(function(elem){
+    console.log(elem.type + " donuts cost $"+elem.cost+" each");
+
+})
+
+-------------------------------------------------------------------------------
+8. Eru öll eigindi (e. properties) í sömu röð og þeim var bætt í object, rökstuddu?
+
+já,vegna þess að þeim er ekki raðað upp á nýtt
+object er partur af týpunni Object sem er óraðað safn af eigindum með primitive value, object eða function.
+
+-------------------------------------------------------------------------------
+9. Útskýrðu hvað eftirfarandi kóði gerir.
+let user = { name: "John" };
+let admin = user;
+
+Kóðinn býr til Object-ið "user" með property-ið (name: "John")
+síðan býr kóðinn til "admin" sem verður clone af Object-inu "user"
+
+-------------------------------------------------------------------------------
+10. Afhverju virkar eftirfarandi?
+const user = {
+ name: "John"
+};
+user.age = 25;
+alert(user.age); // 25
+
+kóðinn bætir öðru property-i við Object-ið "user" sem heitir "age" og skilgreinir það sem 25
+
+-------------------------------------------------------------------------------
